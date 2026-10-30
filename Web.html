@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>North Negros College</title>
+
+
+<style>
+
+    /* =========================
+       BASIC SETTINGS
+    ========================= */
+
+    * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #eef7ee;
+        color: #183b27;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        background: linear-gradient(
+            135deg,
+            #063b1d,
+            #126b38,
+            #1b8a4b
+        );
+
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+
+        animation: fadeIn 1.5s;
+    }
+
+
+    /* LOGO */
+
+    header img {
+        width: 130px;
+        height: 130px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border: 5px solid white;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.4);
+
+        animation: floatLogo 3s infinite;
+    }
+
+
+    @keyframes floatLogo {
+
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+
+    }
+
+
+    header h1 {
+        font-size: 40px;
+        margin: 15px 0 5px;
+    }
+
+
+    header p {
+        font-size: 18px;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+        background-color: #083c20;
+
+        padding: 15px;
+
+        text-align: center;
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        box-shadow:
+            0 3px 10px rgba(0,0,0,0.2);
+    }
+
+
+    nav a {
+        color: white;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        margin: 5px 15px;
+
+        display: inline-block;
+
+        transition: 0.3s;
+    }
+
+
+    nav a:hover {
+        color: #8ee6a8;
+
+        transform: translateY(-3px);
+    }
+
+
+    /* =========================
+       MAIN CONTAINER
+    ========================= */
+
+    .container {
+        width: 90%;
+
+        max-width: 1100px;
+
+        margin: auto;
+
+        padding: 60px 0;
+    }
+
+
+    /* =========================
+       SECTION TITLES
+    ========================= */
+
+    h2 {
+        text-align: center;
+
+        color: #126b38;
+
+        font-size: 32px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .section-text {
+        text-align: center;
+
+        max-width: 800px;
+
+        margin: auto;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-box {
+        background-color: white;
+
+        padding: 30px;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.1);
+
+        animation: fadeIn 1s;
+    }
+
+
+    .about-box h3 {
+        color: #126b38;
+    }
+
+
+    /* =========================
+       COURSE CARDS
+    ========================= */
+
+    .courses {
+        display: flex;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .course {
+        width: 300px;
+
+        background-color: white;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+
+        text-align: center;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.15);
+
+        transition: 0.4s;
+
+        animation: fadeIn 1s;
+    }
+
+
+    .course:hover {
+        transform: translateY(-10px);
+
+        box-shadow:
+            0 15px 30px rgba(0,0,0,0.2);
+    }
+
+
+    .course img {
+        width: 100%;
+
+        height: 190px;
+
+        object-fit: cover;
+    }
+
+
+    .course-content {
+        padding: 20px;
+    }
+
+
+    .course h3 {
+        color: #126b38;
+
+        font-size: 24px;
+    }
+
+
+    .course p {
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    button {
+        background-color: #126b38;
+
+        color: white;
+
+        border: none;
+
+        padding: 12px 22px;
+
+        border-radius: 6px;
+
+        cursor: pointer;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+
+    button:hover {
+        background-color: #083c20;
+
+        transform: scale(1.05);
+    }
+
+
+    /* =========================
+       COURSE DETAILS
+    ========================= */
+
+    .info {
+        display: none;
+
+        background-color: white;
+
+        margin-top: 40px;
+
+        padding: 30px;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.15);
+
+        animation: slideDown 0.5s;
+    }
+
+
+    @keyframes slideDown {
+
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+
+    .info h2 {
+        text-align: left;
+    }
+
+
+    .info-image {
+        width: 100%;
+
+        max-width: 700px;
+
+        height: 300px;
+
+        object-fit: cover;
+
+        display: block;
+
+        margin: 20px auto;
+
+        border-radius: 10px;
+    }
+
+
+    .info h3 {
+        color: #126b38;
+
+        margin-top: 25px;
+    }
+
+
+    .info li {
+        margin: 10px 0;
+    }
+
+
+    /* =========================
+       VIDEO SECTION
+    ========================= */
+
+    .videos {
+        display: flex;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .video-box {
+        background-color: white;
+
+        width: 320px;
+
+        padding: 20px;
+
+        border-radius: 15px;
+
+        text-align: center;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.15);
+
+        transition: 0.3s;
+    }
+
+
+    .video-box:hover {
+        transform: translateY(-8px);
+    }
+
+
+    .video-box h3 {
+        color: #126b38;
+    }
+
+
+    video {
+        width: 100%;
+
+        border-radius: 10px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+        background-color: #126b38;
+
+        color: white;
+
+        padding: 30px;
+
+        border-radius: 15px;
+
+        text-align: center;
+    }
+
+
+    .contact h2 {
+        color: white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background-color: #083c20;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 28px;
+        }
+
+
+        nav a {
+            display: block;
+
+            margin: 10px;
+        }
+
+
+        .container {
+            width: 92%;
+        }
+
+
+        .course {
+            width: 100%;
+        }
+
+
+        .video-box {
+            width: 100%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =================================
+     HEADER
+================================== -->
+
+<header>
+
+    <img src="logo.png"
+         alt="North Negros College Logo">
+
+    <h1>North Negros College</h1>
+
+    <p>
+        Education • Skills • Future
+    </p>
+
+</header>
+
+
+
+<!-- =================================
+     NAVIGATION
+================================== -->
+
+<nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#courses">Courses</a>
+
+    <a href="#videos">Videos</a>
+
+    <a href="#contact">Contact</a>
+
+</nav>
+
+
+
+<!-- =================================
+     HOME
+================================== -->
+
+<section class="container" id="home">
+
+    <h2>
+        Welcome to North Negros College
+    </h2>
+
+    <p class="section-text">
+
+        Welcome to North Negros College.
+
+        Explore our different courses,
+        learn about each program,
+        and discover opportunities
+        for your future career.
+
+    </p>
+
+</section>
+
+
+
+<!-- =================================
+     ABOUT
+================================== -->
+
+<section class="container" id="about">
+
+    <h2>
+        About North Negros College
+    </h2>
+
+
+    <div class="about-box">
+
+        <h3>
+            About Our School
+        </h3>
+
+        <p>
+
+            North Negros College is an educational
+            institution that provides students with
+            knowledge and practical skills.
+
+        </p>
+
+
+        <p>
+
+            The school offers different programs
+            that can help students prepare for
+            their future careers.
+
+        </p>
+
+
+        <h3>
+            Our Goal
+        </h3>
+
+        <p>
+
+            Our goal is to help students develop
+            their skills, improve their knowledge,
+            and prepare for future opportunities.
+
+        </p>
+
+
+        <h3>
+            Our Courses
+        </h3>
+
+        <p>
+
+            Students can explore programs such as
+            Computer Science, Hospitality Management,
+            and Business Administration.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     COURSES
+================================== -->
+
+<section class="container" id="courses">
+
+    <h2>
+        Our Courses
+    </h2>
+
+
+    <div class="courses">
+
+
+        <!-- COMPUTER SCIENCE -->
+
+        <div class="course">
+
+            <img src="cs.jpg"
+                 alt="Computer Science">
+
+            <div class="course-content">
+
+                <h3>
+                    Computer Science
+                </h3>
+
+                <p>
+
+                    Learn about programming,
+                    computers, software,
+                    websites, and technology.
+
+                </p>
+
+                <button onclick="showCS()">
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HOSPITALITY MANAGEMENT -->
+
+        <div class="course">
+
+            <img src="hm.jpg"
+                 alt="Hospitality Management">
+
+            <div class="course-content">
+
+                <h3>
+                    Hospitality Management
+                </h3>
+
+                <p>
+
+                    Learn about hotels,
+                    restaurants, tourism,
+                    and customer service.
+
+                </p>
+
+                <button onclick="showHM()">
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUSINESS ADMINISTRATION -->
+
+        <div class="course">
+
+            <img src="ba.jpg"
+                 alt="Business Administration">
+
+            <div class="course-content">
+
+                <h3>
+                    Business Administration
+                </h3>
+
+                <p>
+
+                    Learn about business,
+                    management, marketing,
+                    and finance.
+
+                </p>
+
+                <button onclick="showBA()">
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         COMPUTER SCIENCE DETAILS
+    ================================== -->
+
+    <div class="info" id="cs">
+
+        <h2>
+            Computer Science
+        </h2>
+
+
+        <img src="cs.jpg"
+             class="info-image"
+             alt="Computer Science">
+
+
+        <p>
+
+            Computer Science focuses on computers,
+            programming, software development,
+            and modern technology.
+
+        </p>
+
+
+        <h3>
+            What You Learn
+        </h3>
+
+        <ul>
+
+            <li>Programming</li>
+
+            <li>Web Development</li>
+
+            <li>Database Management</li>
+
+            <li>Computer Systems</li>
+
+            <li>Software Development</li>
+
+        </ul>
+
+
+        <h3>
+            Possible Careers
+        </h3>
+
+        <ul>
+
+            <li>Programmer</li>
+
+            <li>Web Developer</li>
+
+            <li>Software Developer</li>
+
+            <li>Database Administrator</li>
+
+            <li>IT Professional</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- =================================
+         HOSPITALITY MANAGEMENT DETAILS
+    ================================== -->
+
+    <div class="info" id="hm">
+
+        <h2>
+            Hospitality Management
+        </h2>
+
+
+        <img src="hm.jpg"
+             class="info-image"
+             alt="Hospitality Management">
+
+
+        <p>
+
+            Hospitality Management focuses on
+            hotels, restaurants, tourism,
+            events, and customer service.
+
+        </p>
+
+
+        <h3>
+            What You Learn
+        </h3>
+
+        <ul>
+
+            <li>Hotel Management</li>
+
+            <li>Food and Beverage Service</li>
+
+            <li>Tourism</li>
+
+            <li>Customer Service</li>
+
+            <li>Event Management</li>
+
+        </ul>
+
+
+        <h3>
+            Possible Careers
+        </h3>
+
+        <ul>
+
+            <li>Hotel Manager</li>
+
+            <li>Restaurant Manager</li>
+
+            <li>Tourism Staff</li>
+
+            <li>Event Coordinator</li>
+
+            <li>Hospitality Staff</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- =================================
+         BUSINESS ADMINISTRATION DETAILS
+    ================================== -->
+
+    <div class="info" id="ba">
+
+        <h2>
+            Business Administration
+        </h2>
+
+
+        <img src="ba.jpg"
+             class="info-image"
+             alt="Business Administration">
+
+
+        <p>
+
+            Business Administration focuses on
+            business operations, management,
+            marketing, finance, and entrepreneurship.
+
+        </p>
+
+
+        <h3>
+            What You Learn
+        </h3>
+
+        <ul>
+
+            <li>Business Management</li>
+
+            <li>Marketing</li>
+
+            <li>Finance</li>
+
+            <li>Human Resources</li>
+
+            <li>Entrepreneurship</li>
+
+        </ul>
+
+
+        <h3>
+            Possible Careers
+        </h3>
+
+        <ul>
+
+            <li>Business Manager</li>
+
+            <li>Marketing Staff</li>
+
+            <li>Human Resources Staff</li>
+
+            <li>Business Owner</li>
+
+            <li>Entrepreneur</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     VIDEOS
+================================== -->
+
+<section class="container" id="videos">
+
+    <h2>
+        Course Videos
+    </h2>
+
+
+    <p class="section-text">
+
+        Watch the videos below to learn more
+        about our different courses.
+
+    </p>
+
+
+    <br>
+
+
+    <div class="videos">
+
+
+        <!-- CS VIDEO -->
+
+        <div class="video-box">
+
+            <h3>
+                Computer Science
+            </h3>
+
+            <video controls>
+
+                <source
+                    src="cs-video.mp4"
+                    type="video/mp4">
+
+                Your browser does not
+                support video.
+
+            </video>
+
+            <p>
+
+                Learn about programming,
+                computers, and technology.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- HM VIDEO -->
+
+        <div class="video-box">
+
+            <h3>
+                Hospitality Management
+            </h3>
+
+            <video controls>
+
+                <source
+                    src="hm-video.mp4"
+                    type="video/mp4">
+
+                Your browser does not
+                support video.
+
+            </video>
+
+            <p>
+
+                Learn about hotels,
+                restaurants, tourism,
+                and customer service.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- BA VIDEO -->
+
+        <div class="video-box">
+
+            <h3>
+                Business Administration
+            </h3>
+
+            <video controls>
+
+                <source
+                    src="ba-video.mp4"
+                    type="video/mp4">
+
+                Your browser does not
+                support video.
+
+            </video>
+
+            <p>
+
+                Learn about business,
+                management, and entrepreneurship.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     CONTACT
+================================== -->
+
+<section class="container" id="contact">
+
+    <div class="contact">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            North Negros College
+        </p>
+
+        <p>
+            Email: info@northnegroscollege.edu
+        </p>
+
+        <p>
+            Phone: 092150874841
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer>
+
+    <p>
+        © 2026 North Negros College
+    </p>
+
+    <p>
+        All Rights Reserved
+    </p>
+
+</footer>
+
+
+
+<!-- =================================
+     JAVASCRIPT
+================================== -->
+
+<script>
+
+
+    /* HIDE ALL COURSE INFORMATION */
+
+    function hideAll() {
+
+        document.getElementById("cs")
+            .style.display = "none";
+
+        document.getElementById("hm")
+            .style.display = "none";
+
+        document.getElementById("ba")
+            .style.display = "none";
+
+    }
+
+
+
+    /* SHOW COMPUTER SCIENCE */
+
+    function showCS() {
+
+        hideAll();
+
+        document.getElementById("cs")
+            .style.display = "block";
+
+    }
+
+
+
+    /* SHOW HOSPITALITY MANAGEMENT */
+
+    function showHM() {
+
+        hideAll();
+
+        document.getElementById("hm")
+            .style.display = "block";
+
+    }
+
+
+
+    /* SHOW BUSINESS ADMINISTRATION */
+
+    function showBA() {
+
+        hideAll();
+
+        document.getElementById("ba")
+            .style.display = "block";
+
+    }
+
+</script>
+```
+
+</body>
+
+</html>
+
+```
